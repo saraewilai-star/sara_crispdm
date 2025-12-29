@@ -1,0 +1,344 @@
+/* =====================
+   GLOBAL
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #fdf1f4; /* nude pink background */
+  color: #5a3e36;
+  line-height: 1.6;
+}
+
+p, li {
+  font-size: 16px;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+nav {
+  background: #f3c6d3;
+  padding: 15px;
+  border-bottom: 4px solid #e8aebe;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+/* If you use <a> in nav */
+nav a {
+  color: #5a3e36;
+  margin: 0 6px;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+nav a:hover {
+  color: #b85c7a;
+}
+
+nav a.active {
+  color: #b85c7a;
+  border-bottom: 2px solid #b85c7a;
+}
+
+/* Nav buttons (for tab switching) */
+nav button {
+  background: transparent;
+  border: none;
+  color: #5a3e36;
+  margin: 0 4px;
+  font-weight: bold;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 12px;
+  transition: transform 0.05s ease-in-out;
+}
+
+nav button:hover {
+  color: #b85c7a;
+}
+
+nav button.active {
+  color: #b85c7a;
+  border-bottom: 2px solid #b85c7a;
+}
+
+nav button:active {
+  transform: scale(0.98);
+}
+
+/* =====================
+   SECTION LAYOUT
+===================== */
+section {
+  padding: 30px;
+  background: #fff7f9;
+  margin: 25px auto;     /* center */
+  max-width: 1100px;     /* nicer on large screens */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* =====================
+   HEADINGS
+===================== */
+h1, h2, h3, h4 {
+  color: #b85c7a;
+}
+
+/* =====================
+   TAB CONTENT
+===================== */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   TABLE (CASE STUDY + VIEW FEEDBACK)
+===================== */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crisp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 600px; /* helps on mobile so it can scroll nicely */
+}
+
+.crisp-table th {
+  background: #f8d7da;
+  color: #b85c7a;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.crisp-table td {
+  padding: 12px;
+  border-top: 1px solid #f3b8c8;
+  vertical-align: top;
+}
+
+.crisp-table tr:hover td {
+  background: #fff5f7;
+}
+
+/* =====================
+   SVG FLOWCHART
+===================== */
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg text {
+  fill: #b85c7a;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* =====================
+   MINI DATA VISUAL (BAR)
+===================== */
+.bar-wrap {
+  margin-top: 15px;
+  display: grid;
+  gap: 12px;
+}
+
+.bar {
+  position: relative;
+  border: 1px solid #f3b8c8;
+  border-radius: 14px;
+  padding: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.bar span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  color: #5a3e36;
+}
+
+.bar .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: #f8d7da;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #f3c6d3;
+  color: #5a3e36;
+  font-weight: bold;
+}
+
+/* =====================
+   CONTACT PAGE (CENTER)
+===================== */
+.contact-page {
+  max-width: 650px;
+  margin: 40px auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f3b8c8;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  background: #ffffff;
+  min-height: 44px; /* mobile tap-friendly */
+}
+
+.contact-form textarea {
+  min-height: 120px; /* better message area */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #b85c7a;
+  box-shadow: 0 0 0 3px rgba(184,92,122,0.15);
+}
+
+.submit-btn {
+  background: #b85c7a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #a14d68;
+}
+
+/* =====================
+   LINKS + STATUS (GLOBAL)
+===================== */
+.back-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #5a3e36;
+}
+
+.back-link:hover {
+  color: #b85c7a;
+}
+
+.muted {
+  opacity: 0.85;
+}
+
+.status-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.status-box.success {
+  background: #e6ffed;
+  border: 1px solid #b7f5c2;
+  color: #1f7a35;
+}
+
+.status-box.error {
+  background: #ffe6ea;
+  border: 1px solid #ffb3c0;
+  color: #9b1c35;
+}
+
+/* =====================
+   RESPONSIVE (TABLET)
+===================== */
+@media (max-width: 900px) {
+  section {
+    margin: 18px auto;
+    padding: 22px;
+  }
+
+  nav button {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .contact-page {
+    max-width: 90%;
+  }
+}
+
+/* =====================
+   RESPONSIVE (MOBILE)
+===================== */
+@media (max-width: 600px) {
+  section {
+    margin: 12px auto;
+    padding: 18px;
+  }
+
+  p, li {
+    font-size: 15px;
+  }
+
+  nav button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .crisp-table th,
+  .crisp-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

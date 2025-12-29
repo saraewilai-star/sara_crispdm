@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRISP-DM Data Science Methodology</title>
+
+  <!-- ✅ Pastikan folder betul: /css/style.css -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- (Optional) font nicer -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+  <nav>
+    <!-- ✅ guna button supaya tak refresh page -->
+   <button type="button" onclick="showTab('home', this)">Home</button>
+   <button type="button" onclick="showTab('overview', this)">Methodology</button>
+   <button type="button" onclick="showTab('example', this)">Case Study</button>
+   <button type="button" onclick="showTab('visual', this)">Visual</button>
+   <button type="button" onclick="showTab('references', this)">References</button>
+   <button type="button" onclick="showTab('about', this)">About</button>
+   <button type="button" onclick="location.href='contact.html'">Feedback</button>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="tab-content active">
+    <h1>CRISP-DM Data Science Methodology</h1>
+    <p>
+      CRISP-DM (Cross-Industry Standard Process for Data Mining) is a widely used
+      data science methodology that provides a structured and systematic approach
+      for planning, developing, and deploying data-driven solutions.
+    </p>
+
+    <h2>Chosen Methodology: CRISP-DM</h2>
+    <p>
+      CRISP-DM is a standard methodology for developing data science projects
+      in a step-by-step and well-organized manner.
+    </p>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="overview" class="tab-content">
+    <h2>Research Methodology</h2>
+
+    <h3>Definition & Origin</h3>
+    <p>
+      CRISP-DM was introduced in 1996 by IBM, SPSS, and Daimler-Benz to provide
+      a standard framework for data mining projects.
+    </p>
+
+    <h3>Key Phases</h3>
+    <ol>
+      <li><b>Business Understanding</b> – Define business objectives.</li>
+      <li><b>Data Understanding</b> – Collect and explore data.</li>
+      <li><b>Data Preparation</b> – Clean and prepare data.</li>
+      <li><b>Modeling</b> – Build predictive models.</li>
+      <li><b>Evaluation</b> – Evaluate model performance.</li>
+      <li><b>Deployment</b> – Apply results in real-world use.</li>
+    </ol>
+
+    <h3>Purpose & Applications</h3>
+    <ul>
+      <li>Used when projects involve large datasets and data-driven decision making</li>
+      <li>Common industries: retail, healthcare, banking, marketing</li>
+    </ul>
+
+    <h3>Advantages</h3>
+    <ul>
+      <li>Clear and structured process</li>
+      <li>Easy to understand</li>
+      <li>Widely used in industry</li>
+    </ul>
+
+    <h3>Limitations</h3>
+    <ul>
+      <li>Less flexible for real-time / streaming data</li>
+      <li>Limited focus on engineering deployment details</li>
+    </ul>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section id="example" class="tab-content">
+    <h2>Real-World Example: Customer Churn Prediction (Telecommunications)</h2>
+    <p><b>Problem:</b> Predict customers likely to cancel subscriptions (churn).</p>
+
+    <table class="crisp-table">
+      <tr>
+        <th>Phase</th>
+        <th>Explanation</th>
+      </tr>
+      <tr>
+        <td>Business Understanding</td>
+        <td>Reduce customer churn rate</td>
+      </tr>
+      <tr>
+        <td>Data Understanding</td>
+        <td>Collect customer data: age, usage, monthly bill, contract type</td>
+      </tr>
+      <tr>
+        <td>Data Preparation</td>
+        <td>Remove missing values, normalize/scale values</td>
+      </tr>
+      <tr>
+        <td>Modeling</td>
+        <td>Build Logistic Regression model</td>
+      </tr>
+      <tr>
+        <td>Evaluation</td>
+        <td>Measure accuracy/performance (e.g., confusion matrix)</td>
+      </tr>
+      <tr>
+        <td>Deployment</td>
+        <td>Marketing team targets high-risk customers for retention</td>
+      </tr>
+    </table>
+
+    <p><b>Final Output:</b> A list of customers with high churn risk used for retention strategies.</p>
+  </section>
+
+  <!-- VISUAL -->
+  <section id="visual" class="tab-content">
+    <h2>CRISP-DM Flowchart</h2>
+
+    <!-- ✅ Tukar SVG jadi responsive pakai viewBox -->
+    <svg viewBox="0 0 980 180" width="100%" height="180" aria-label="CRISP-DM flowchart">
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#b85c7a"/>
+        </marker>
+      </defs>
+
+      <!-- Boxes -->
+      <rect x="20" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="90" y="90" text-anchor="middle">Business Understanding</text>
+
+      <rect x="180" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="250" y="90" text-anchor="middle">Data Understanding</text>
+
+      <rect x="340" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="410" y="90" text-anchor="middle">Data Preparation</text>
+
+      <rect x="500" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="570" y="90" text-anchor="middle">Modeling</text>
+
+      <rect x="660" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="730" y="90" text-anchor="middle">Evaluation</text>
+
+      <rect x="820" y="60" width="140" height="50" rx="15" fill="#f8d7da"/>
+      <text x="890" y="90" text-anchor="middle">Deployment</text>
+
+      <!-- Arrows -->
+      <line x1="160" y1="85" x2="180" y2="85" stroke="#b85c7a" marker-end="url(#arrow)"/>
+      <line x1="320" y1="85" x2="340" y2="85" stroke="#b85c7a" marker-end="url(#arrow)"/>
+      <line x1="480" y1="85" x2="500" y2="85" stroke="#b85c7a" marker-end="url(#arrow)"/>
+      <line x1="640" y1="85" x2="660" y2="85" stroke="#b85c7a" marker-end="url(#arrow)"/>
+      <line x1="800" y1="85" x2="820" y2="85" stroke="#b85c7a" marker-end="url(#arrow)"/>
+    </svg>
+
+    <!-- ✅ Tambah simple data viz (tanpa library) -->
+    <h3>Mini Data Visualization (Sample)</h3>
+    <p>Example churn distribution (sample numbers):</p>
+
+    <div class="bar-wrap">
+      <div class="bar">
+        <span>Retained (78%)</span>
+        <div class="fill" style="width:78%"></div>
+      </div>
+      <div class="bar">
+        <span>Churned (22%)</span>
+        <div class="fill" style="width:22%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references" class="tab-content">
+    <h2>References</h2>
+    <ul>
+      <li>Chapman, P. et al. (2000). <i>CRISP-DM 1.0: Step-by-step data mining guide</i>.</li>
+      <li>IBM Documentation: <i>CRISP-DM help overview</i>.</li>
+      <li>Wirth, R. & Hipp, J. (2000). <i>CRISP-DM: Towards a standard process model for data mining</i>.</li>
+    </ul>
+
+    <p class="note">
+      Tip: If lecturer wants links, you can paste URL under each reference.
+    </p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p><b>Name:</b> APHASSARA PHETSUWAN A/P EWI LAI</p>
+    <p><b>Matric No:</b> 251594183</p>
+    <p><b>Course:</b> IMC11203 Introduction to Computing & Data Science</p>
+  </section>
+
+
+  <footer>
+    <p>© 2026 Data Science Assignment</p>
+  </footer>
+
+  <!-- ✅ Pastikan path JS betul -->
+  <script src="script.js"></script>
+</body>
+</html>
